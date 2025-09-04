@@ -6,19 +6,20 @@ const Footer = () => {
   const [visitors, setVisitors] = useState(0);
 
   useEffect(() => {
-    const fetchUniqueVisitors = async () => {
-      try {
-        const response = await axios.get(
-          "https://counterapi.dev/v2/workspaces/yash-portfolio/unique-visitors-ys10/increment"
-        );
-        setVisitors(response.data.value);
-      } catch (error) {
-        console.error("Error fetching unique visitor count:", error);
-      }
-    };
+  const fetchVisitors = async () => {
+    try {
+      const response = await axios.get(
+        "https://counterapi.dev/v2/workspaces/yash-portfolio/counters/unique-visitors-ys10/increment"
+      );
+      setVisitors(response.data.count ?? response.data.value);
+    } catch (error) {
+      console.error("Error fetching visitor count:", error);
+    }
+  };
 
-    fetchUniqueVisitors();
-  }, []);
+  fetchVisitors();
+}, []);
+
 
   return (
     <section className="flex flex-wrap items-center justify-between gap-5 pb-3 text-sm text-neutral-400 c-space">
