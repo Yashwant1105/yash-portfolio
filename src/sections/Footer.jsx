@@ -1,23 +1,50 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { createClient } from "@supabase/supabase-js";
 import { mySocials } from "../constants";
+
+const supabaseUrl = "https://wvkygizejnwbsxlkggsj.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2a3lnaXplam53YnN4bGtnZ3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDgwOTUsImV4cCI6MjA3MjU4NDA5NX0.ukvOXNRfLupAqFgZLOQIS2gOylsTdp1x2i3nnCiUjkE";
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const Footer = () => {
   const [visitors, setVisitors] = useState(0);
 
   useEffect(() => {
-    const fetchUniqueVisitors = async () => {
+    const incrementVisitor = async () => {
       try {
-        const response = await axios.get(
-          "https://counterapi.dev/v2/workspaces/yash-portfolio/counters/unique-visitors-ys10/increment"
-        );
-        setVisitors(response.data.value ?? response.data.count);
-      } catch (error) {
-        console.error("Error fetching visitor count:", error);
+        // Check if user already counted
+        const alreadyVisited = localStorage.getItem("visited");
+        
+        // Fetch current count
+        let { data, error } = await supabase
+          .from("visitors")
+          .select("id, count")
+          .limit(1)
+          .single();
+        if (error) throw error;
+
+        let newCount = data.count;
+
+        // Only increment if not visited
+        if (!alreadyVisited) {
+          newCount += 1;
+          const { error: updateError } = await supabase
+            .from("visitors")
+            .update({ count: newCount })
+            .eq("id", data.id);
+          if (updateError) throw updateError;
+
+          // Mark as visited
+          localStorage.setItem("visited", "true");
+        }
+
+        setVisitors(newCount);
+      } catch (err) {
+        console.error("Error updating visitor count:", err);
       }
     };
 
-    fetchUniqueVisitors();
+    incrementVisitor();
   }, []);
 
   return (
