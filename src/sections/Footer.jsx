@@ -3,7 +3,8 @@ import { createClient } from "@supabase/supabase-js";
 import { mySocials } from "../constants";
 
 const supabaseUrl = "https://wvkygizejnwbsxlkggsj.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2a3lnaXplam53YnN4bGtnZ3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDgwOTUsImV4cCI6MjA3MjU4NDA5NX0.ukvOXNRfLupAqFgZLOQIS2gOylsTdp1x2i3nnCiUjkE";
+const supabaseAnonKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2a3lnaXplam53YnN4bGtnZ3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDgwOTUsImV4cCI6MjA3MjU4NDA5NX0.ukvOXNRfLupAqFgZLOQIS2gOylsTdp1x2i3nnCiUjkE";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const Footer = () => {
@@ -12,29 +13,29 @@ const Footer = () => {
   useEffect(() => {
     const incrementVisitor = async () => {
       try {
-        // Check if user already counted
         const alreadyVisited = localStorage.getItem("visited");
-        
+
         // Fetch current count
         let { data, error } = await supabase
           .from("visitors")
           .select("id, count")
           .limit(1)
           .single();
+
         if (error) throw error;
 
         let newCount = data.count;
 
-        // Only increment if not visited
+        // Only increment if not visited before
         if (!alreadyVisited) {
           newCount += 1;
           const { error: updateError } = await supabase
             .from("visitors")
             .update({ count: newCount })
             .eq("id", data.id);
+
           if (updateError) throw updateError;
 
-          // Mark as visited
           localStorage.setItem("visited", "true");
         }
 
@@ -45,6 +46,24 @@ const Footer = () => {
     };
 
     incrementVisitor();
+
+    // 🔹 Subscribe to realtime updates
+    const channel = supabase
+      .channel("realtime:visitors")
+      .on(
+        "postgres_changes",
+        { event: "UPDATE", schema: "public", table: "visitors" },
+        (payload) => {
+          console.log("Realtime change:", payload);
+          setVisitors(payload.new.count);
+        }
+      )
+      .subscribe();
+
+    // Cleanup on unmount
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   return (
@@ -72,6 +91,7 @@ const Footer = () => {
           </a>
         ))}
 
+        {/* Visitor counter badge */}
         <div className="ml-1 px-2 py-0.5 bg-neutral-800 rounded text-white text-xs">
           {visitors} visitors
         </div>
