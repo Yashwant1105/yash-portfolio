@@ -36,7 +36,33 @@ export const myProjects = [
     ],
   },
   {
-    id: 2,
+    "id": 2,
+    "title": "Flight Delay Prediction Pipeline",
+    "description": "End-to-end AWS data and ML pipeline for flight delay prediction and real-time deployment.",
+    "subDescription": [
+      "Built an end-to-end data pipeline on AWS following the Medallion architecture (Bronze → Silver → Gold).",
+      "Ingested flight delay data from Kaggle into Amazon S3 and transformed using AWS Athena.",
+      "Developed analytical datasets and created Power BI dashboards for airline and route performance insights.",
+      "Trained and optimized an XGBoost-based flight delay prediction model in Amazon SageMaker.",
+      "Deployed the ML model using FastAPI, Docker, and EC2, serving real-time predictions via an API and interactive frontend.",
+    ],
+    "href": "https://github.com/dshryn/etl-pipeline-aws",
+    "logo": "/assets/projects/flights.svg",
+    "image": "/assets/projects/flightdelay.png",
+    "tags": [
+      { "id": 1, "name": "AWS S3", "path": "/assets/logos/s3.svg" },
+      { "id": 2, "name": "AWS Athena", "path": "/assets/logos/athena.svg" },
+      { "id": 3, "name": "SageMaker", "path": "/assets/logos/sagemaker.svg" },
+      { "id": 4, "name": "EC2", "path": "/assets/logos/ec2.svg" },
+      { "id": 5, "name": "Docker", "path": "/assets/logos/docker.svg" },
+      { "id": 6, "name": "FastAPI", "path": "/assets/logos/fastapi.svg" },
+      { "id": 7, "name": "Power BI", "path": "/assets/logos/powerbi.svg" },
+      { "id": 8, "name": "Python", "path": "/assets/logos/python.svg" },
+      { "id": 9, "name": "XGBoost", "path": "/assets/logos/xgboost.svg" }
+    ]
+  },
+  {
+    id: 3,
     title: "Grundfos - Chiller Load Prediction ",
     description:
       "App that predicts chiller loads using machine learning to optimize cooling and reduce energy consumption in large buildings.",
@@ -79,7 +105,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Ootsav",
     description:
       "A cross-platform event planning app for weddings, birthdays, corporate events, and more. Supports sub-events (e.g., Mehendi, Sangeet) with timeline view, RSVP tracking, and guest group management.",
@@ -115,7 +141,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Playlist Converter",
     description:
       "An application that helps users convert playlists between different music platforms primarily Spotify, Youtube Music and SoundCloud.",
@@ -156,65 +182,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    id: 5,
-    title: "Flight Delay Prediction Pipeline",
-    description:
-      "End-to-end data pipeline on AWS for flight delay prediction.",
-    subDescription: [
-      "Ingest flight delay data from Kaggle into Amazon S3 using AWS ETL pipeline.",
-      "Apply schema detection and transformations with AWS Glue and crawlers.",
-      "Load processed data into Snowflake using a star-schema model.",
-      "Develop Power BI dashboards for flight trends and delays.",
-      "Integrate ML models on Amazon SageMaker to predict flight delays.",
-      "*Still under development"
-    ],
-    href: "https://yashwantsahoo05.wixsite.com/aws10",
-    logo: "/assets/projects/flights.svg",
-    image: "/assets/projects/aws.png",
-    tags: [
-      {
-        id: 1,
-        name: "AWS",
-        path: "/assets/logos/aws.svg",
-      },
-      {
-        id: 2,
-        name: "AWS S3",
-        path: "/assets/logos/s3.svg",
-      },
-      {
-        id: 3,
-        name: "AWS Glue",
-        path: "/assets/logos/glue.svg",
-      },
-      {
-        id: 4,
-        name: "Snowflake",
-        path: "/assets/logos/snowflake.svg",
-      },
-      {
-        id: 5,
-        name: "SageMaker",
-        path: "/assets/logos/sagemaker.svg",
-      },
-      {
-        id: 6,
-        name: "Power BI",
-        path: "/assets/logos/powerbi.svg",
-      },
-      {
-        id: 7,
-        name: "Python",
-        path: "/assets/logos/python.svg",
-      },
-      {
-        id: 8,
-        name: "Scikit-Learn",
-        path: "/assets/logos/scikitlearn.svg",
-      },
-    ],
-  }
 
 ];
 
@@ -251,4 +218,4 @@ export const experiences = [
 //     body: "Fantastic work! I'm really impressed. Do well with your future endeavours",
 //     img: "",
 //   },
-// ];
+// ]; 
