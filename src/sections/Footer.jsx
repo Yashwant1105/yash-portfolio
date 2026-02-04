@@ -92,9 +92,9 @@ const Footer = () => {
         ))}
 
         {/* Visitor counter badge */}
-        <div className="ml-1 px-2 py-0.5 bg-neutral-800 rounded text-white text-xs">
+        {/* <div className="ml-1 px-2 py-0.5 bg-neutral-800 rounded text-white text-xs">
           {visitors} visitors
-        </div>
+        </div> */}
       </div>
 
       <p>© 2025 Yash. All rights reserved.</p>
