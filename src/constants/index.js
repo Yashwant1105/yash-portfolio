@@ -112,9 +112,9 @@ export const myProjects = [
     subDescription: [
       "Designed UI to enable hosts to add/edit event details, send invites, and manage RSVPs.",
       "Created guest-facing views to access accommodation, timeline, and contact information.",
-      "*Currently under development (IEEE-CS VIT)",
+      "*Live on Google Play Store (IEEE-CS VIT)",
     ],
-    href: "https://github.com/krish-1604/Ootsav",
+    href: "https://play.google.com/store/apps/details?id=com.ootsav",
     logo: "assets/ootsav.png",
     image: "  /assets/projects/ootsav.png",
     tags: [
