@@ -199,7 +199,16 @@ export const mySocials = [
 ];
 
 export const experiences = [
-
+  {
+  title: "TDP Intern",
+  job: "Optum - UHG",
+  date: "June - August 2026",
+  contents: [
+      "Worked on a microservice-based platform for governing safe and auditable production database changes across five databases.",
+      "Built a multi-dialect SQL parser microservice using Flask and SQLGlot to analyze queries and extract statement-level risk metrics for downstream rule-based and LLM-driven optimization.",
+      "Developed a drift detection engine and AI metrics dashboard for identifying out-of-band database changes, anomalies, behavioural patterns, and LLM usage analytics, deployed on Azure Kubernetes using Helm."
+    ],
+  },
   {
     title: "Summer Intern",
     job: "ITC Infotech",
@@ -209,7 +218,7 @@ export const experiences = [
       "Built simplified proof-of-concept pipelines to practice data ingestion, transformation, and querying.",
       "Explored the medallion architecture (Bronze, Silver, Gold layers) by experimenting with Netflix Customer Retention dataset to understand structured data flow."
     ],
-  },
+  }
 ];
 // export const reviews = [
 //   {
