@@ -1,42 +1,6 @@
 export const myProjects = [
   {
-    id: 1,
-    title: "BudgetBee",
-    description:
-      "A mobile app that helps users track and manage daily expenses. It allows adding and viewing expenses, supports authentication, categorization, and spending analytics, offering valuable insights into financial habits.",
-    subDescription: [
-      "Developed a Flutter-based enhanced version of expense tracking app, enabling users to efficiently manage and categorize their expenses.",
-      "Integrated Supabase authentication for secure user login and sign-up.",
-      "Implemented an interactive expense visualization feature using bar charts and added a swipe-to-delete functionality with an undo option for improved user experience.",
-    ],
-    href: "https://github.com/Yashwant1105/BudgetBee",
-    logo: "/assets/budgetbee.png",
-    image: "/assets/projects/budgetbee1.png",
-    tags: [
-      {
-        id: 1,
-        name: "Flutter",
-        path: "/assets/logos/flutter.svg",
-      },
-      {
-        id: 2,
-        name: "Dart",
-        path: "/assets/logos/dart.svg",
-      },
-      {
-        id: 3,
-        name: "Supabase",
-        path: "/assets/logos/supabase.svg",
-      },
-      {
-        id: 4,
-        name: "Figma",
-        path: "/assets/logos/figma.svg",
-      },
-    ],
-  },
-  {
-    "id": 2,
+    "id": 1,
     "title": "Flight Delay Prediction Pipeline",
     "description": "End-to-end AWS data and ML pipeline for flight delay prediction and real-time deployment.",
     "subDescription": [
@@ -62,20 +26,20 @@ export const myProjects = [
     ]
   },
   {
-    id: 3,
-    title: "Grundfos - Chiller Load Prediction ",
+    id: 2,
+    title: "Neo 150 Prep",
     description:
-      "App that predicts chiller loads using machine learning to optimize cooling and reduce energy consumption in large buildings.",
+      "A cross-platform coding interview preparation app built around the NeetCode 150 problem set, helping users track progress, revise problems, practice interviews, and build consistency.",
     subDescription: [
-      "Built a cross-platform mobile app using Flutter & Dart to optimize cooling efficiency in commercial buildings.",
-      "Integrated a Python FastAPI backend with machine learning (Scikit-Learn) to predict chiller loads based on occupancy, weather, and operational parameters.",
-      "Developed interactive charts and visual analytics to help managers monitor energy usage and optimize chiller performance.",
-      "Enabled energy savings, cost reduction, and peak load management through predictive insights and data-driven decision-making.",
-      "*All core features are built; backend integration remains. "
+      "Built problem tracking, notes, revision scheduling, daily goals, streaks, XP progression, and achievements.",
+      "Integrated Supabase authentication and cloud synchronization with an offline-first architecture.",
+      "Developed AI-powered coaching and mock interviews using Gemini API.",
+      "Implemented cross-platform notifications using Firebase Cloud Messaging and Web Push.",
+      "*Live as a Web App and available for Android",
     ],
-    href: "https://github.com/Yashwant1105/grundfos",
-    logo: "/assets/grundfos.png",
-    image: "/assets/projects/grundfos.png",
+    href: "https://github.com/Yashwant1105/neo-150-prep",
+    logo: "/assets/neo150.svg",
+    image: "/assets/projects/neo150.png",
     tags: [
       {
         id: 1,
@@ -84,28 +48,23 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "Dart",
-        path: "/assets/logos/dart.svg",
+        name: "Supabase",
+        path: "/assets/logos/supabase.svg",
       },
       {
         id: 3,
-        name: "FastAPI",
-        path: "/assets/logos/fastapi.svg",
+        name: "Firebase",
+        path: "/assets/logos/firebase.svg",
       },
       {
         id: 4,
-        name: "Sci-Kit Learn",
-        path: "/assets/logos/scikitlearn.svg",
-      },
-      {
-        id: 5,
-        name: "Figma",
-        path: "/assets/logos/figma.svg",
+        name: "Gemini API",
+        path: "/assets/logos/gemini.svg",
       },
     ],
   },
   {
-    id: 4,
+    id: 3,
     title: "Ootsav",
     description:
       "A cross-platform event planning app for weddings, birthdays, corporate events, and more. Supports sub-events (e.g., Mehendi, Sangeet) with timeline view, RSVP tracking, and guest group management.",
@@ -141,19 +100,18 @@ export const myProjects = [
     ],
   },
   {
-    id: 5,
-    title: "Playlist Converter",
+    id: 4,
+    title: "BudgetBee",
     description:
-      "An application that helps users convert playlists between different music platforms primarily Spotify, Youtube Music and SoundCloud.",
+      "A mobile app that helps users track and manage daily expenses. It allows adding and viewing expenses, supports authentication, categorization, and spending analytics, offering valuable insights into financial habits.",
     subDescription: [
-      "Implementing an intuitive UI for selecting, filtering, and transferring playlists across platforms.",
-      "Integrating REST APIs to fetch and display playlist data from different streaming services.",
-      "Collaborating with the backend team to handle playlist processing and authentication using Supabase.",
-      "*Still under development (SIAM-VIT)"
+      "Developed a Flutter-based enhanced version of expense tracking app, enabling users to efficiently manage and categorize their expenses.",
+      "Integrated Supabase authentication for secure user login and sign-up.",
+      "Implemented an interactive expense visualization feature using bar charts and added a swipe-to-delete functionality with an undo option for improved user experience.",
     ],
-    href: "https://github.com/SIAM-VIT/playlist-converter-app",
-    logo: "assets/playcon (1).webp",
-    image: "/assets/projects/playlistconverter.png",
+    href: "https://github.com/Yashwant1105/BudgetBee",
+    logo: "/assets/budgetbee.png",
+    image: "/assets/projects/budgetbee1.png",
     tags: [
       {
         id: 1,
@@ -172,17 +130,78 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "MongoDB",
-        path: "/assets/logos/mongodb.svg",
-      },
-      {
-        id: 5,
         name: "Figma",
         path: "/assets/logos/figma.svg",
       },
     ],
   },
-
+  {
+  id: 5,
+  title: "NYC Cab Surge Predictor",
+  description:
+    "An interactive Streamlit dashboard that predicts taxi surge probability using NYC Yellow Cab trip data, weather conditions, events, demand, and time-based features.",
+  subDescription: [
+    "Developed a machine learning dashboard for predicting surge risk in NYC taxi demand using Logistic Regression, Decision Tree, and Random Forest models.",
+    "Implemented interactive inputs for pickup hour, trip count, rain, events, weekends, and peak hours with real-time surge probability and risk-level predictions.",
+    "Added explainable feature-contribution charts, what-if scenario simulation, KPI cards, and live model performance comparison using Plotly visualizations.",
+  ],
+  href: "https://github.com/Yashwant1105/nyc-cab-surge-predictor",
+  logo: "/assets/surge-predictor.svg",
+  image: "/assets/projects/surge-predictor1.png",
+  tags: [
+    {
+      id: 1,
+      name: "Python",
+      path: "/assets/logos/python.svg",
+    },
+    {
+      id: 2,
+      name: "Streamlit",
+      path: "/assets/logos/streamlit.svg",
+    },
+    {
+      id: 3,
+      name: "Scikit-learn",
+      path: "/assets/logos/scikitlearn.svg",
+    },
+    {
+      id: 4,
+      name: "Plotly",
+      path: "/assets/logos/plotly.svg",
+    },
+    {
+      id: 5,
+      name: "Pandas",
+      path: "/assets/logos/pandas.svg",
+    },
+  ],
+  },
+  {
+  "id": 6,
+  "title": "Forest Fire Risk Prediction Pipeline",
+  "description": "End-to-end machine learning pipeline for predicting forest fire risk across Uttarakhand using weather, satellite vegetation, terrain, and geospatial fire data.",
+  "subDescription": [
+    "Processed MODIS fire observations, weather data, NDVI satellite imagery, and SRTM elevation data for Uttarakhand.",
+    "Engineered temperature, humidity, rainfall, NDVI, elevation, and dryness-index features using seven-day time sequences.",
+    "Trained Random Forest, CNN, and LSTM models to identify potential forest fire risk.",
+    "Built an optimized ensemble model achieving approximately 0.867 ROC-AUC with a calibrated 0.40 decision threshold.",
+    "Developed an interactive Streamlit dashboard with city selection, live Open-Meteo weather forecasts, risk probabilities, and Folium-based geospatial visualization."
+  ],
+  "href": "https://github.com/Yashwant1105/forest-fire-risk-prediction",
+  "logo": "/assets/forest-fire.png",
+  "image": "/assets/projects/forest-fire-risk.png",
+  "tags": [
+    { "id": 1, "name": "Python", "path": "/assets/logos/python.svg" },
+    { "id": 2, "name": "Streamlit", "path": "/assets/logos/streamlit.svg" },
+    { "id": 3, "name": "Scikit-learn", "path": "/assets/logos/scikitlearn.svg" },
+    { "id": 4, "name": "TensorFlow", "path": "/assets/logos/tensorflow.svg" },
+    { "id": 5, "name": "Random Forest", "path": "/assets/logos/random-forest.svg" },
+    { "id": 6, "name": "CNN", "path": "/assets/logos/cnn.svg" },
+    { "id": 7, "name": "LSTM", "path": "/assets/logos/lstm.svg" },
+    { "id": 8, "name": "Open-Meteo", "path": "/assets/logos/weather.svg" },
+    { "id": 9, "name": "Folium", "path": "/assets/logos/folium.svg" }
+  ]
+  }
 ];
 
 export const mySocials = [
@@ -200,10 +219,10 @@ export const mySocials = [
 
 export const experiences = [
   {
-  title: "TDP Intern",
-  job: "Optum - UHG",
-  date: "June - August 2026",
-  contents: [
+    title: "TDP Intern",
+    job: "Optum - UHG",
+    date: "June - August 2026",
+    contents: [
       "Worked on a microservice-based platform for governing safe and auditable production database changes across five databases.",
       "Built a multi-dialect SQL parser microservice using Flask and SQLGlot to analyze queries and extract statement-level risk metrics for downstream rule-based and LLM-driven optimization.",
       "Developed a drift detection engine and AI metrics dashboard for identifying out-of-band database changes, anomalies, behavioural patterns, and LLM usage analytics, deployed on Azure Kubernetes using Helm."

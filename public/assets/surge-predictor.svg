@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="title desc">
+  <title id="title">NYC Cab Surge Predictor app logo</title>
+  <desc id="desc">A yellow taxi with a cyan rising prediction line and map pin on a dark navy rounded square.</desc>
+  <defs>
+    <filter id="glowCyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowYellow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Full-frame rounded app tile -->
+  <rect x="18" y="18" width="988" height="988" rx="190" fill="#061a35"/>
+  <rect x="38" y="38" width="948" height="948" rx="170" fill="none" stroke="#0d2d57" stroke-width="8"/>
+
+  <!-- Minimal map grid -->
+  <g fill="none" stroke="#123965" stroke-width="13" opacity=".7" stroke-linecap="round">
+    <path d="M105 275 L315 330 L470 240 L700 310 L915 245"/>
+    <path d="M105 475 L270 420 L420 500 L600 430 L915 510"/>
+    <path d="M105 690 L275 735 L435 650 L650 725 L915 650"/>
+    <path d="M245 145 L220 850"/>
+    <path d="M440 105 L380 900"/>
+    <path d="M665 125 L710 885"/>
+    <path d="M855 180 L825 850"/>
+  </g>
+
+  <!-- Route + analytics line, enlarged -->
+  <g fill="none" stroke="#20d9ef" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowCyan)">
+    <path d="M265 440 L390 525 L520 385 L660 435 L850 205"/>
+  </g>
+  <g fill="#061a35" stroke="#20d9ef" stroke-width="20">
+    <circle cx="390" cy="525" r="25"/>
+    <circle cx="520" cy="385" r="25"/>
+    <circle cx="660" cy="435" r="25"/>
+  </g>
+  <path d="M850 205 L850 285 L910 205 Z" fill="#20d9ef" filter="url(#glowCyan)"/>
+
+  <!-- Map pin -->
+  <g filter="url(#glowYellow)">
+    <path d="M220 205 C150 205 120 260 120 315 C120 390 220 490 220 490 C220 490 320 390 320 315 C320 260 290 205 220 205 Z"
+          fill="#ffc928"/>
+    <circle cx="220" cy="315" r="40" fill="#061a35"/>
+  </g>
+
+  <!-- Large taxi -->
+  <g filter="url(#glowYellow)">
+    <!-- roof and body -->
+    <path d="M300 675 L405 535 Q425 505 470 505 H675 Q720 505 745 545 L820 675 Z"
+          fill="#ffcb22" stroke="#ffd84d" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M210 685 Q240 630 330 620 H755 Q835 630 865 685 L900 790 Q915 850 870 900 Q845 925 805 925 H220 Q175 925 150 885 Q130 850 150 795 Z"
+          fill="#ffbf18" stroke="#ffd84d" stroke-width="14" stroke-linejoin="round"/>
+
+    <!-- windows -->
+    <path d="M355 635 H475 L420 700 H270 Z" fill="#0a2748"/>
+    <path d="M540 635 H680 L760 700 H595 Z" fill="#0a2748"/>
+
+    <!-- windshield -->
+    <path d="M365 650 H685 L740 720 H300 Z" fill="#0b2c51" opacity=".95"/>
+
+    <!-- checker light -->
+    <path d="M465 510 H585 L605 565 H445 Z" fill="#ffcf26" stroke="#ffe05a" stroke-width="8"/>
+    <path d="M470 525 H500 V565 H470 Z M530 525 H560 V565 H530 Z" fill="#061a35"/>
+
+    <!-- grille -->
+    <rect x="390" y="770" width="245" height="70" rx="30" fill="#061a35"/>
+    <path d="M425 792 H600 M425 815 H600" stroke="#12365f" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- headlights -->
+    <path d="M195 740 Q245 720 305 750 L330 795 Q250 800 190 780 Z" fill="#dffcff" stroke="#20d9ef" stroke-width="10"/>
+    <path d="M830 740 Q780 720 720 750 L695 795 Q775 800 835 780 Z" fill="#dffcff" stroke="#20d9ef" stroke-width="10"/>
+
+    <!-- wheels -->
+    <rect x="195" y="835" width="95" height="100" rx="28" fill="#061326"/>
+    <rect x="735" y="835" width="95" height="100" rx="28" fill="#061326"/>
+
+    <!-- bumper -->
+    <path d="M285 875 H735" stroke="#ffe36b" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <!-- small data dots -->
+  <g fill="#20d9ef" opacity=".9">
+    <circle cx="300" cy="460" r="9"/><circle cx="330" cy="478" r="9"/><circle cx="360" cy="492" r="9"/>
+  </g>
+</svg>

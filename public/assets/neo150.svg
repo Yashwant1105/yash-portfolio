@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="768" height="768" viewBox="0 0 768 768" fill="none">
+  <defs>
+    <!-- Soft neon bloom matching the original app icon -->
+    <filter id="outerGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur1"/>
+      <feColorMatrix in="blur1" type="matrix"
+        values="0 0 0 0 0.72
+                0 0 0 0 1
+                0 0 0 0 0.10
+                0 0 0 0.55 0" result="glow1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur2"/>
+      <feColorMatrix in="blur2" type="matrix"
+        values="0 0 0 0 0.72
+                0 0 0 0 1
+                0 0 0 0 0.10
+                0 0 0 0.85 0" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Original near-black square background -->
+  <rect width="768" height="768" fill="#121314"/>
+
+  <!-- Neon terminal frame -->
+  <g filter="url(#outerGlow)">
+    <rect x="64" y="72" width="640" height="640" rx="112"
+          fill="#05090D" stroke="#B9FF18" stroke-width="38"/>
+
+    <!-- Two prompt dots -->
+    <circle cx="177" cy="226" r="23" fill="#B9FF18"/>
+    <circle cx="262" cy="226" r="23" fill="#B9FF18"/>
+
+    <!-- Terminal prompt chevron -->
+    <path d="M213 353 L350 452 L213 551"
+          stroke="#B9FF18" stroke-width="42"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Terminal cursor / underscore -->
+    <path d="M391 564 H548"
+          stroke="#B9FF18" stroke-width="42"
+          stroke-linecap="round"/>
+  </g>
+</svg>
